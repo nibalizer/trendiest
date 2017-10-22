@@ -1,0 +1,10 @@
+[Unit]
+Description=Service that keeps symlinks to 'latest' file modified in a directory
+
+[Service]
+User=nibz
+ExecStart=/home/nibz/local/trendiest/venv/bin/python /home/nibz/local/trendiest/trendiest.py /home/nibz/local/trendiest/config.yaml
+
+[Install]
+WantedBy=multi-user.target
+
