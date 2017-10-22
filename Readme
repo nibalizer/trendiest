@@ -42,6 +42,35 @@ Unfortunately, the state of inotify python libraries is not great. There is an o
 
 
 
+```
+cd local
+git clone https://github.com/nibalizer/trendiest
+cd trendiest/
+virtualenv --python=python3 venv
+source venv/bin/activate
+pip install -r requirements.txt 
+cp example_config.yaml config.yaml
+vim config.yaml # make whatever modifications
+vim contrib/trendiest.service # make whatever modifications to make yours work
+sudo cp contrib/trendiest.service /etc/systemd/system/
+systemctl daemon-reload 
+sudo systemctl start trendiest.service
+sudo systemctl status trendiest.service
+
+# optional 
+sudo systemctl enable trendiest.service
+```
+
+
+Name
+----
+
+This daemon keeps the latest file easy to get at with a symlink, so you could say it's very trendy. Or maybe the trendiest. Yeah.. it's bad. Names are hard ok.
+
+
+
+
+
 
 
 
